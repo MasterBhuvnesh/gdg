@@ -1,0 +1,4 @@
+- [ ] Home page
+- [ ] Blog page
+- [ ] Event page
+- [ ] Live page - BKP

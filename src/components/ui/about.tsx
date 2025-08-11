@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef } from "react";
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
-import { Circle, ArrowRight } from "lucide-react";
+import { Circle } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 
 interface BusinessHeroProps {
@@ -16,7 +16,7 @@ interface BusinessHeroProps {
 const About: React.FC<BusinessHeroProps> = ({
   headline = "Meet The Team",
   subheadline = "We are the Google Developer Group (GDG) on Campus at RBU, a passionate community of developers, tech enthusiasts, and innovators. Our goal is to foster learning, collaboration, and hands-on experience in various Google technologies and beyond. Through workshops, hackathons, and networking events, we empower students to grow their skills, connect with industry experts, and build impactful projects. Join us to be part of an exciting journey in tech! 🚀",
-  callLabel = "Join To Explore",
+  // callLabel = "Join To Explore",
   isLive = true,
 }) => {
   const ref = useRef(null);
@@ -94,7 +94,7 @@ const About: React.FC<BusinessHeroProps> = ({
               {subheadline}
             </motion.p>
 
-            <motion.div
+            {/* <motion.div
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4"
             >
@@ -107,7 +107,7 @@ const About: React.FC<BusinessHeroProps> = ({
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </Link>
-            </motion.div>
+            </motion.div> */}
           </div>
         </motion.div>
 
@@ -127,6 +127,7 @@ const About: React.FC<BusinessHeroProps> = ({
                 height={450}
                 alt="Team picture"
                 className="rounded-3xl hover:brightness-105 transition-all duration-300"
+                priority={true}
               />
             </motion.div>
           </div>

@@ -11,7 +11,7 @@ export function Footer() {
     <div className="footer mt-4 bg-slate-900">
       <footer
         id="footer"
-        className="relative flex w-full items-center justify-between py-10 max-md:flex-col md:h-80 overflow-hidden"
+        className="relative flex w-full items-center justify-between py-10 max-md:flex-col md:h-80 overflow-hidden backdrop-blur-[40px] bg-slate-900/70 shadow-[0_0_10px_1px_rgba(0,0,0,0.25)]"
       >
         <div className="flex md:w-1/3 md:pl-16 flex-col items-center justify-center max-md:w-fit">
           <img src="/icons/gdgico.svg" alt="logo" className="h-10" />
