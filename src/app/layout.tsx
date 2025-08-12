@@ -4,6 +4,7 @@ import { productSans } from "@/constants";
 import { cn } from "@/utils";
 import { ThemeProvider } from "@/providers";
 import { Header, Footer } from "@/components";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata = generateMetadata();
 
 export default function RootLayout({
@@ -26,7 +27,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="">{children}</main>
+          <main className="">
+            {children} <SpeedInsights />
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
