@@ -1,0 +1,154 @@
+---
+title: "Git and Github Basics : Tutorial for Beginners"
+description: "GitHub is a cloud-based platform for version control and collaboration using Git, allowing developers to track changes, manage projects, and contribute to open-source seamlessly. 🚀"
+date: "2025-03-31"
+author: "Ashutosh Pandey"
+image: "/blog-images/git-github.png"
+---
+
+![GitHub Logo](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*DbJrZ73enNNmnB_UxBDcmQ.jpeg)
+
+
+Today we are going to talk about GitHub, an open-source version control (using git) and software hosting provider. There are alternatives to GitHub (which is the hosting provider) such as GitLab, BitBucket, and more, but today we will focus on GitHub. This tutorial can be broken down into two parts:
+
+- **<u>Intro to git</u>** (Why is version control important/useful?)
+- **<u>Intro to GitHub</u>** (What is GitHub and how do I use it?)
+
+## Prerequisites:
+
+- Install git or **<u>GitHub Desktop</u>** for your operating system
+- Create an account on GitHub
+- **Optional:** Install **<u>VS Code</u>** or another text editor
+
+## Intro to git
+
+So what is git and version control anyway? Git is a software program to manage changes in a particular file or software system and allows us to see changes to files and accept or reject those changes on a line-by-line basis. Furthermore, git allows us to revert our programs back to a previous state should the current program become unstable.
+
+A great way to think about git and version control is the “Track Changes” feature in Microsoft Word. In fact, I am convinced that Microsoft created this feature entirely motivated by version control software like git (they do own GitHub after all). In the image below you can see Track Changes on the left and a GitHub “diff” view (which shows recent changes) on the right.
+
+Anyway, when using Track Changes you can see modifications another user (if you are collaborating) or you yourself made. You can also apply comments. Git works in a similar way to track software files and allow developers and analysts to track changes in their code. In software this has the added benefit of allowing developers to use a “test” branch (commonly called the development branch) to test new software features without affecting the main production branch (and thus the actual product).
+
+```bash
+git init
+```
+```bash
+git add <file(s)>
+```
+```bash
+git commit -m "Insert message here"
+```
+```bash
+git push <remote> <branch>
+```
+
+The first of these commands is very straightforward. It either initializes a new git repository if none existed or reinitializes the existing git repository (which is just a .git folder). The second command is used to add files to staging. Whenever you make changes to a file and are satisfied with them or want them in the git history, you should commit them to git for tracking. To do this, you first need to ‘add’ them (command 2). You can add one file at a time or many. You then use command 3 to commit these files to git for tracking. The message you use in your commit command should reflect the file changes you made to the file(s) currently in staging, be it one or many. Then finally, we use command 4 to push our current git status to the remote hosting provider. This one will make a little more sense in a few minutes, but (generally) we are pushing our main branch to the origin remote. Again, it will make sense in a few minutes.
+
+* These commands can all be accomplished using GitHub Desktop click and drag as well. Please see the above video for an example.
+
+I think that is a sufficient introduction to git, and while we didn’t talk about branching or merging or any of the more complicated features, this gives you a good idea of how you can track your file changes over time using git.
+
+## GitHub Introduction and Example
+
+GitHub (or any git hosting provider) is where, to me, the power of version control really shines, and this is for two reasons. The first is that now you are able to contribute to other people’s code bases using pull requests (discussed below) or vice-versa, and the second is that your code is now available for anyone to see (assuming your repository is public). This is the essence of the open-source movement. GitHub can also be used to host static websites, documentation, manage CI/CD pipelines to continuously update your production applications when new code is committed, and more.
+
+I am going to assume you have created an account at GitHub.com as recommended above. Now, you can follow along as we create a new repository, clone (copy) it to our local machine, make some changes, and then push those changes to GitHub.
+
+The basic GitHub flow can be seen below (although we will not be using all of these features, it is still a great image):
+
+![GitHub Logo](https://miro.medium.com/v2/format:webp/1*3rU2UUUzMbpom3vZKB1Svg.png)
+
+## Step 1 — Create a Repo
+Create a new repository by clicking the + icon in the top right and then clicking “New Repository”. You should then see this screen:
+
+![GitHub Logo](/blog-images/repo.png)
+
+All of your repositories will be created under your username combined with the repository name. For this one I am just going to call it “example”. You can name yours whatever you wish, just replace “example” with the name of your repository in the steps below.
+
+We are going to leave the rest of the options as default except we are going to click “Add a README file”. README files are like introduction files for repositories. We want to check this option to illustrate what happens when we clone a repository in the next step. Finally click “Create Repository”.
+
+![GitHub Logo](/blog-images/create.png)
+
+You should finish this step looking at your newly created repository, congratulations!
+
+![GitHub Logo](/blog-images/final.png)
+
+## Step 2 — Clone Your Repo
+
+In this step, we are going to clone our new repository to our local machine. We can do this by clicking on the ‘Code’ button, then the HTTPS option, and copying our repository’s git url.
+
+![GitHub Logo](/blog-images/clone.png)
+
+Now that we have our url, we can copy the code by opening our terminal, navigating to whichever folder we want (I am choosing my desktop for this demonstration) and ‘git clone’ing our repository url.
+
+So for me, on macOS, my terminal commands were:
+
+```bash 
+cd Desktop 
+``` 
+to switch to my desktop folder
+
+```bash 
+git clone <url>
+```
+ which for me was git clone https://github.com/nanthony007/example.git
+
+Then I can type ls to see my new repository folder was created and then cd example into my new folder.
+
+![GitHub Logo](https://miro.medium.com/v2/format:webp/1*fTpOxYfiZyUthP5xDFv1_A.png)
+
+Now we should be inside our terminal and if we run ls again we should only see our REAMDE file listed. IF you made it this far, congratulations! You’re awesome! Now let’s make some changes and push those changes to our GitHub repository.
+
+## Step 3 — Making Commits and Pushes
+
+For our last step we are going to open our README file. If you manage to navigate to this folder in your file explorer you can right click and open this with any text editor, or, if you have VS Code installed, directly from a terminal you can simply run code . to open the current directory in VS Code.
+
+However you get there, let’s make some changes to our README file. I am going to add a sentence at the end of the file that says
+
+“This was added from my local machine.”
+
+Great! The only thing left is to commit this change to git, and push our changes to GitHub. Let’s run our standard git commands:
+
+```bash 
+git init
+```
+
+```bash 
+git add . 
+``` 
+to add our README file
+
+```bash 
+git commit -m "Updated README file" 
+```
+to commit our changes
+
+Here we can see there was 1 file changed.
+
+If you look at your GitHub repository now, you will see the README hasn’t been changed yet, let’s fix that by pushing our changes.
+
+git push origin main
+
+* GitHub remotes default to origin, but if you weren’t sure, you could run git remote --list to see all available remotes.
+
+![GitHub Logo](https://miro.medium.com/v2/format:webp/1*FCxV_b2zwtFUroNXeCU4Jw.png)
+
+Now if we refresh our GitHub page we should see new changes were made and our README has been updated:
+
+
+
+![GitHub Logo](/blog-images/update.png)
+
+That’s it! That is the basic git/GitHub workflow! Congratulations if you made it this far!
+
+If you want to see your git diff you can click on the most recent commit to see the file changes involved with that commit! :
+
+![GitHub Logo](/blog-images/commit.png)
+
+Now you can make new files, projects and share them all with the world on GitHub. I encourage you whatever project you are working on, share it with others!
+
+I hope this was practical to some and insightful to others! Thank you for your time, see you in the next one!
+
+
+Till then you can make a Readme.md for your github profile like this
+
+![GitHub Logo](/blog-images/readme.png)
