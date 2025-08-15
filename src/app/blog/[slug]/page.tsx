@@ -10,7 +10,7 @@ const DynamicMarkdownRenderer = dynamic(
     import("@/components/markdown/mdx-renderer").then(
       mod => mod.MarkdownRenderer
     ),
-  { ssr: !!false }
+  { ssr: true }
 );
 
 export async function generateStaticParams() {
@@ -44,6 +44,7 @@ export default async function BlogPost({
               src={post.image}
               alt={post.title}
               fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 768px"
               className="object-cover"
               priority
             />

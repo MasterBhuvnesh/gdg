@@ -99,15 +99,22 @@ const components = {
     );
   },
   pre: (props: any) => <CodeBlock>{props.children}</CodeBlock>,
-  img: (props: any) => (
-    <Image
-      {...props}
-      alt={props.alt || ""}
-      width={800}
-      height={400}
-      className="rounded-lg mx-auto my-6"
-    />
-  ),
+  img: (props: any) => {
+    const width = Number(props.width) || 800;
+    const height = Number(props.height) || Math.round((800 * 9) / 16);
+    return (
+      <Image
+        {...props}
+        alt={props.alt || ""}
+        width={width}
+        height={height}
+        sizes="(max-width: 768px) 100vw, 768px"
+        className={`rounded-lg mx-auto my-6 ${props.className || ""}`}
+        loading="lazy"
+        decoding="async"
+      />
+    );
+  },
   wrapper: (props: any) => <div className="my-6">{props.children}</div>,
   hr: () => <hr className="my-6 border-border" />,
   table: (props: any) => (

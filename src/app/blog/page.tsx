@@ -30,11 +30,11 @@ export default async function BlogPage() {
         </p>
       </div>
 
-      {years.map((year) => (
+      {years.map(year => (
         <div key={year} className="space-y-6">
           <h2 className="text-3xl font-semibold text-foreground">{year}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {postsByYear[year].map((post) => (
+            {postsByYear[year].map(post => (
               <div
                 key={post.slug}
                 className="transition-transform duration-200 hover:scale-105"
@@ -48,6 +48,7 @@ export default async function BlogPage() {
                       src={post.image}
                       alt={post.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 export function Header() {
@@ -37,8 +38,14 @@ export function Header() {
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center">
-            <img src="/icons/gdgico.svg" alt="GDG Logo" className="w-10 h-10" />
+          <Link href="/" className="flex items-center" aria-label="Home">
+            <Image
+              src="/icons/gdgico.svg"
+              alt="GDG Logo"
+              width={40}
+              height={40}
+              priority
+            />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -64,7 +71,7 @@ export function Header() {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-black/90 backdrop-blur-xl z-40 flex flex-col items-center p-6 space-y-6">
+        <div className="fixed inset-0 bg-black z-40 flex flex-col items-center p-6 space-y-6">
           <button
             className="absolute top-4 right-4 p-2"
             onClick={() => setIsOpen(false)}

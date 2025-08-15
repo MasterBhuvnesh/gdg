@@ -4,6 +4,7 @@ import {
   TwitterLogoIcon,
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
+import Image from "next/image";
 import { IoLocationOutline } from "react-icons/io5";
 
 export function Footer() {
@@ -14,7 +15,14 @@ export function Footer() {
         className="relative flex w-full items-center justify-between py-10 max-md:flex-col md:h-80 overflow-hidden backdrop-blur-[40px] bg-slate-900/70 shadow-[0_0_10px_1px_rgba(0,0,0,0.25)]"
       >
         <div className="flex md:w-1/3 md:pl-16 flex-col items-center justify-center max-md:w-fit">
-          <img src="/icons/gdgico.svg" alt="logo" className="h-10" />
+          <Image
+            src="/icons/gdgico.svg"
+            alt="logo"
+            className="h-10"
+            width={80}
+            height={80}
+            priority
+          />
           <p className="pt-4 text-2xl text-slate-100 text-center max-md:text-xl">
             Google Developer Groups
           </p>
@@ -76,10 +84,12 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <img
+        <Image
           src="/images/shapes.svg"
           alt="shapes"
           className="absolute -bottom-24 max-md:-bottom-10 max-md:h-36 object-cover"
+          width={500}
+          height={500}
         />
       </footer>
     </div>
