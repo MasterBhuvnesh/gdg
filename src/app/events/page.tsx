@@ -63,13 +63,13 @@ export default function Events() {
   const upcomingEvents = [
     {
       id: 1,
-      name: "Web Wizard 3.0",
-      date: "5 April 2025",
-      image: "images/event/web-wizards.png",
+      name: "Bappa Ka Prashad 5.0",
+      date: "31 August 2025",
+      image: "images/event/bkp25.png",
       description:
         "Web Wizards 3.0 is a one-day event plus week long bootcamp to explore the exciting world of tech with GDG RBU",
-      location: "Venu : To Be Disclosed Soon",
-      time: "Time : 2:00 AM - 5 PM",
+      location: "Platform : CodeChef",
+      time: "Time : 8:00 PM - 10 PM",
     },
   ];
   const upcomingEvent = upcomingEvents[0];
@@ -116,15 +116,15 @@ export default function Events() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              {/* <a href="https://lu.ma/g4xh2udx?fbclid=PAZXh0bgNhZW0CMTEAAaaClU7dkl28slxaMIDiYVh09yyGplBQoFhcu52xi45jkUbxPKBV3qUfElg_aem_NKLlJJswjh-wcSEZZG13xg"> */}
+             <a href="https://unstop.com/o/kZSVs5q?lb=2hDu92ja&utm_medium=Share&utm_source=csea1bar94977&utm_campaign=Online_coding_challenge"> 
               <button className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-md transition-colors duration-200 font-thin">
                 Register Now
               </button>
-              {/* </a> */}
+              </a>
               {/* <a href="https://gdg-rbu.netlify.app/blog/web-wizards-3"> */}
-              <button className="bg-transparent border border-white text-white hover:bg-white/10 px-6 py-2 rounded-md font-thin transition-colors duration-200">
+              {/* <button className="bg-transparent border border-white text-white hover:bg-white/10 px-6 py-2 rounded-md font-thin transition-colors duration-200">
                 Learn More -{">"}
-              </button>
+              </button> */}
               {/* </a> */}
             </div>
           </div>
@@ -173,3 +173,4 @@ export default function Events() {
     </div>
   );
 }
+
