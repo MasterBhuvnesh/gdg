@@ -55,9 +55,6 @@ export function Header() {
             <Link href="/events" className="nav-link">
               Events
             </Link>
-            <Link href="/blog" className="nav-link">
-              Blogs
-            </Link>
           </div>
 
           <button
@@ -88,13 +85,6 @@ export function Header() {
             onClick={() => setIsOpen(false)}
           >
             Events
-          </Link>
-          <Link
-            href="/blog"
-            className="nav-link"
-            onClick={() => setIsOpen(false)}
-          >
-            Blogs
           </Link>
         </div>
       )}
