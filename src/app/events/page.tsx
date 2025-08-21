@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Events() {
   const events = [
@@ -6,7 +7,7 @@ export default function Events() {
       id: 2,
       name: "EXPLORE 2.0",
       date: "7 March 2025",
-      image: "images/event/event1.svg",
+      image: "/images/event/event1.svg",
       description:
         "Stressed about exams? Need a break from all the studying? It's time to refresh your mind and explore the exciting world of tech with GDG RBU!",
       location: "GD Seminar Hall",
@@ -16,7 +17,7 @@ export default function Events() {
       id: 3,
       name: "SpiderCraft",
       date: "16 Jan 2025",
-      image: "images/event/event2.svg",
+      image: "/images/event/event2.svg",
       description:
         "SPIDER CRAFT 2025: WHERE TECH MET FUN! Still buzzing from the energy of Spider Craft 2025!",
     },
@@ -24,7 +25,7 @@ export default function Events() {
       id: 4,
       name: "Tech Winter Break",
       date: "24 Dec 2024",
-      image: "images/event/event3.svg",
+      image: "/images/event/event3.svg",
       description:
         "This winter gonna be techy. Want to learn new tech like Web Development, App Development? Join us at Tech Winter Break.",
     },
@@ -32,7 +33,7 @@ export default function Events() {
       id: 5,
       name: "Bappa Ka Prashad 4.0",
       date: "15 Sept 2024",
-      image: "images/event/bkp.svg",
+      image: "/images/event/bkp.svg",
       description:
         "With Ganesh Chaturthi in full swing, we are thrilled to announce Bappa Ka Prashad 4.0 on 15th September! 🙏✨ Join us as we blend tradition with competitive coding, sharing the 'Prashad' of knowledge and skill. Get ready to test your abilities and be part of this exciting coding journey.",
       location: "Codeforces",
@@ -42,7 +43,7 @@ export default function Events() {
       id: 6,
       name: "A Step Towards CP 2.0",
       date: "22 Aug 2024",
-      image: "images/event/stcp.png",
+      image: "/images/event/stcp.png",
       description:
         "Introducing... “A Step Towards CP 2.0” - your gateway to the world of programming! 💻🚀 .Competitive Programming: Your key to landing a job at the worlds leading tech companies. By honing your problem-solving prowess and coding expertise, you will make yourself an irresistible hire.",
       location: "DT Seminar Hall",
@@ -52,7 +53,7 @@ export default function Events() {
       id: 7,
       name: "Web Wizards 2.0",
       date: "27 March 2024",
-      image: "images/event/event4.png",
+      image: "/images/event/event4.png",
       description:
         "Web Wizards 2.0 is a one-day event to explore the exciting world of tech with GDG RBU!",
       location: "DT Seminar Hall",
@@ -65,7 +66,7 @@ export default function Events() {
       id: 1,
       name: "Bappa Ka Prashad 5.0",
       date: "31 August 2025",
-      image: "images/event/bkp25.png",
+      image: "/images/event/bkp25.png",
       description:
         "Web Wizards 3.0 is a one-day event plus week long bootcamp to explore the exciting world of tech with GDG RBU",
       location: "Platform : CodeChef",
@@ -80,13 +81,15 @@ export default function Events() {
         Our Events
       </h1>
 
+      {/* Upcoming Event */}
       <div className="w-full mb-12 bg-black border border-white  rounded-lg overflow-hidden shadow-lg">
         <div className="flex flex-col lg:flex-row">
-          <div className="lg:w-2/5 h-64 lg:h-auto relative ">
-            <img
+          <div className="lg:w-2/5 h-64 lg:h-auto relative">
+            <Image
               src={upcomingEvent.image}
               alt={upcomingEvent.name}
-              className="w-full h-full "
+              fill
+              className="object-cover"
             />
             <div className="absolute top-0 left-0 bg-blue-400 text-white px-4 py-2 rounded-br-lg font-thin">
               UPCOMING EVENT
@@ -116,26 +119,22 @@ export default function Events() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-             <a href="https://unstop.com/o/kZSVs5q?lb=2hDu92ja&utm_medium=Share&utm_source=csea1bar94977&utm_campaign=Online_coding_challenge"> 
-              <button className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-md transition-colors duration-200 font-thin">
-                Register Now
-              </button>
+              <a href="https://unstop.com/o/kZSVs5q?lb=2hDu92ja&utm_medium=Share&utm_source=csea1bar94977&utm_campaign=Online_coding_challenge">
+                <button className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-md transition-colors duration-200 font-thin">
+                  Register Now
+                </button>
               </a>
-              {/* <a href="https://gdg-rbu.netlify.app/blog/web-wizards-3"> */}
-              {/* <button className="bg-transparent border border-white text-white hover:bg-white/10 px-6 py-2 rounded-md font-thin transition-colors duration-200">
-                Learn More -{">"}
-              </button> */}
-              {/* </a> */}
             </div>
           </div>
         </div>
       </div>
 
+      {/* Past Events */}
       <div className="rounded-3xl bg-white py-6 px-6">
-        <h1 className="text-4xl md:text-5xl  text-center mb-8 md:mb-12 text-gray-800 dark:text-black font-semibold">
+        <h1 className="text-4xl md:text-5xl text-center mb-8 md:mb-12 text-gray-800 dark:text-black font-semibold">
           Past Events
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4 border-white lg:border-white  dark:border-white font-thin ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4 font-thin">
           {events.map(event => (
             <div
               key={event.id}
@@ -146,10 +145,11 @@ export default function Events() {
               </div>
 
               <div className="mb-4 md:mb-6 w-full h-48 md:h-64 relative overflow-hidden rounded font-thin">
-                <img
+                <Image
                   src={event.image}
                   alt={event.name}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 font-thin"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
 
@@ -173,4 +173,3 @@ export default function Events() {
     </div>
   );
 }
-
