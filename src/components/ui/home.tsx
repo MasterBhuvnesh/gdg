@@ -1,7 +1,6 @@
 "use client";
 
 import { HeroGeometric } from "@/components/comp/shape-landing-hero";
-import Link from "next/link";
 
 export default function Home() {
   // Use a regular <a> tag with target="_blank" or location.href for external redirect
