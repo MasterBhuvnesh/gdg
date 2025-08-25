@@ -55,6 +55,14 @@ export function Header() {
             <Link href="/events" className="nav-link">
               Events
             </Link>
+            <Link
+              href="https://github.gdgrbu.tech"
+              className="nav-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tutorials
+            </Link>
           </div>
 
           <button

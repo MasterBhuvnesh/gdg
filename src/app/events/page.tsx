@@ -124,6 +124,11 @@ export default function Events() {
                   Register Now
                 </button>
               </a>
+              <a href="https://bkp5.gdgrbu.tech">
+                <button className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-2 rounded-md transition-colors duration-200 font-thin">
+                  Website
+                </button>
+              </a>
             </div>
           </div>
         </div>
